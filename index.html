@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <link href='https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap' rel='stylesheet'>
+    <link href='./stylesheet.css' rel='stylesheet'>
+  </head>
+
+  <body>
+    <h1>Flight Plan Converter</h1>
+
+    <p>
+      A simple tool to convert between various flight plan formats.
+      For example, useful for converting .FPL files from SkyVector to .FMS or .PLN files for your simulator.
+    </p>
+
+    <p>
+      Having issues or want to suggest a feature? Send a direct message to <strong>Kognise#6356</strong> on Discord.
+      Note that this does not support airways yet. Instead they'll just show up as direct waypoints, which shouldn't be an issue in most simulators.
+    </p>
+
+    <div class='formats active'>
+      <div class='label'>From:</div>
+      <div class='list' id='from-format-list'></div>
+    </div>
+
+    <div id='drop-zone' tabindex='0' role='button'>
+      Drop your flight plan here or click to upload
+    </div>
+    <input type='file' id='drop-zone-fake-input' />
+
+    <div class='formats' id='to-format-container'>
+      <div class='label'>To:</div>
+      <div class='list' id='to-format-list'></div>
+    </div>
+
+    <script src='./scripts/index.ts'></script>
+  </body>
+</html>

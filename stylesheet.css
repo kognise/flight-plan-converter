@@ -1,0 +1,106 @@
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 100px auto;
+  color: #DDDDDD;
+  background: #242424;
+  font-size: 0.875rem;
+  padding: 14px;
+  max-width: 900px;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 0;
+  color: #FFFFFF;
+  margin-bottom: 46px;
+}
+
+p {
+  margin: 0;
+  margin-bottom: 46px;
+  line-height: 1.6;
+  font-size: 0.94rem;
+}
+
+p+p, h1+p {
+  margin-top: -20px;
+}
+
+textarea {
+  background: #303030;
+  border: none;
+  padding: 14px;
+  color: inherit;
+  font-size: 1rem;
+  box-sizing: border-box;
+  width: 100%;
+  height: 200px;
+  resize: vertical;
+}
+
+pre {
+  font-size: 1rem;
+}
+
+.formats {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  user-select: none;
+}
+
+.formats:not(.active) {
+  display: none;
+}
+
+.formats .label {
+  width: 4rem;
+}
+
+.formats .list {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.formats .list button {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: bold;
+  color: #FFFFFF;
+  background: #303030;
+  border: none;
+  display: block;
+  padding: 26px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.formats .list button.active {
+  background: #287542;
+}
+
+#drop-zone {
+  margin: 14px auto;
+  border: 2px dashed #303030;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 20px;
+  height: 300px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+#drop-zone:not(.active) {
+  display: none;
+}
+
+#drop-zone-fake-input {
+  display: none;
+}
