@@ -76,6 +76,11 @@ pre {
   padding: 26px;
   cursor: pointer;
   box-sizing: border-box;
+  transition: background 140ms ease-out;
+}
+
+.formats .list button:hover:not(.active) {
+  background: #383838;
 }
 
 .formats .list button.active {
@@ -103,4 +108,14 @@ pre {
 
 #drop-zone-fake-input {
   display: none;
+}
+
+.js-focus-visible :focus:not(.focus-visible) {
+  outline: none;
+}
+
+@media only screen and (max-width: 700px) {
+  body {
+    margin: 0 auto;
+  }
 }

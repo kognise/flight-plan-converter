@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "focus-visible": "^5.1.0",
     "xmlbuilder2": "^2.4.0"
   },
   "devDependencies": {

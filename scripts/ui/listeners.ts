@@ -1,4 +1,5 @@
-import { formats } from '../formats'
+import { extname } from 'path'
+import { formats } from '../util/formats'
 import { download } from '../util/helpers'
 import { Format } from '../util/types'
 import { state } from './state'
@@ -18,14 +19,22 @@ export const listeners = {
         (async () => {
           if (!state.file) return
 
-          const from = formats.find((format) => format.id === state.selectedFrom) as Format
-          const to = formats.find((format) => format.id === id) as Format
+          try {
+            const from = formats.find((format) => format.id === state.selectedFrom) as Format
+            const to = formats.find((format) => format.id === id) as Format
 
-          const parsed = from.parse(await state.file.text())
-          download(
-            `${parsed.departure.name} to ${parsed.arrival.name}.${to.extensions[0]}`,
-            to.stringify(parsed)
-          )
+            if (!from.extensions.includes(extname(state.file.name).toLowerCase().slice(1))) {
+              throw new Error(`Invalid extension, supported: ${from.extensions.join(',')}`)
+            }
+
+            const parsed = from.parse(await state.file.text())
+            download(
+              `${parsed.departure.name} to ${parsed.arrival.name}.${to.extensions[0]}`,
+              to.stringify(parsed)
+            )
+          } catch (error) {
+            alert(`Couldn't convert your flight plan! ${error?.toString() ?? error ?? 'Unknown error'}`)
+          }
         })()
       }
     })

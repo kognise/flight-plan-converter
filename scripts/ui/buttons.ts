@@ -1,4 +1,4 @@
-import { formats } from '../formats'
+import { formats } from '../util/formats'
 
 const getFormatButtons = () => formats.map((format) => `
   <button data-id='${format.id}'>

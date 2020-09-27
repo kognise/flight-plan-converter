@@ -1,3 +1,5 @@
+import 'focus-visible'
+
 const a = document.getElementById('a')! as HTMLTextAreaElement
 const b = document.getElementById('b')! as HTMLPreElement
 
