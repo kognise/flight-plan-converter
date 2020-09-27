@@ -7,7 +7,6 @@ class State {
 
   set selectedFrom(value) {
     this._selectedFrom = value
-    this._file = null
     this.updated()
     this.store()
   }
