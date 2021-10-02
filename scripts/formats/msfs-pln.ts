@@ -35,8 +35,8 @@ const msfsPln: Format = {
 		const getWaypoint = (atcWaypoint: AtcWaypoint): Waypoint => ({
 			name: atcWaypoint.ICAO?.ICAOIdent ?? atcWaypoint['@id'],
 			type: typeKeyToTypes[atcWaypoint.ATCWaypointType],
-			latitude: pdms2d(atcWaypoint.WorldPosition.split(',')[0]),
-			longitude: pdms2d(atcWaypoint.WorldPosition.split(',')[1])
+			latitude: pdms2d(atcWaypoint.WorldPosition.split(',')[0].trim()),
+			longitude: pdms2d(atcWaypoint.WorldPosition.split(',')[1].trim())
 		})
 
 		return {
