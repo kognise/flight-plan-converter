@@ -29,7 +29,7 @@ export const listeners = {
 
             const parsed = from.parse(await state.file.text())
             download(
-              `${parsed.departure.name} to ${parsed.arrival.name}.${to.extensions[0]}`,
+              `${parsed.departure.name}-${parsed.arrival.name}.${to.extensions[0]}`,
               to.stringify(parsed)
             )
           } catch (error) {
